@@ -14,6 +14,9 @@ public class GameView extends JFrame implements Observer {
 	public GameView(GameModel gameModel) {
 		this.gameModel = gameModel;
 		gameModel.addObserver(this);
+		this.setContentPane(new Map(200,200));
+		this.setLocationRelativeTo(null);
+		pack();
 		this.setVisible(true);
 	}
 	
