@@ -6,6 +6,7 @@ import java.util.Observer;
 import javax.swing.JFrame;
 
 import model.GameModel;
+import controller.GameController;
 
 public class GameView extends JFrame implements Observer {
 	
@@ -13,16 +14,15 @@ public class GameView extends JFrame implements Observer {
 	
 	public GameView(GameModel gameModel) {
 		this.gameModel = gameModel;
-		gameModel.addObserver(this);
 		this.setContentPane(new Map(200,200));
 		this.setLocationRelativeTo(null);
 		pack();
+		this.gameModel.addObserver(this);
 		this.setVisible(true);
 	}
 	
 	@Override
 	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
+		
 	}
-
 }
